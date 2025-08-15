@@ -62,3 +62,69 @@
 // console.log(fearTeam);
 
 
+// ----------------------------------
+
+// Problem-04: Same Same But Different  😕 
+
+// function isSame(arr1, arr2) {
+//     // You have to write your code here
+//     if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+//         return "Invalid";
+//     }
+//     else if (arr1.length !== arr2.length) {
+//         return false;
+//     }
+//     for (let i = 0; i < arr1.length; i++) {
+//         if (arr1[i] !== arr2[i]) {
+//             return false;
+//         }
+//     }
+//     return true;
+
+// }
+
+// console.log(isSame(
+// {data: [2 , 5 , 6] } , [2 , 5 , 6]
+// ));
+
+
+
+
+// ------------------------------------
+
+// Problem-05: Exam Result Report Generator
+
+function resultReport(marks) {
+    // You have to write your code here
+    if (!Array.isArray(marks)) {
+        return "Invalid";
+    }
+    let totalMarks = 0;
+    let passSubNum = 0;
+    let failSubNum = 0;
+    for (const mark of marks) {
+        totalMarks += mark;
+
+        if (mark < 40) {
+            failSubNum++;
+        } else {
+            passSubNum++;
+        }
+    }
+    let examAverageMark = Math.round(totalMarks / marks.length);
+    // finalScore:NaN, Problem solution;
+    if (marks.length === 0) {
+        return { finalScore: 0, pass: 0, fail: 0 };
+    }
+
+    return {
+        finalScore: examAverageMark,
+        pass: passSubNum,
+        fail: failSubNum
+
+    }
+
+}
+// console.log(resultReport(
+// 100
+// ));
